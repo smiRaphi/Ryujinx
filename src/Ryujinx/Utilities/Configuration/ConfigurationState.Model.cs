@@ -518,6 +518,23 @@ namespace Ryujinx.Ava.Utilities.Configuration
             public ReactiveObject<string> ShadersDumpPath { get; private set; }
 
             /// <summary>
+            /// Directory to save the game textures, if texture dumping is enabled.
+            /// </summary>
+            public ReactiveObject<string> TexturesDumpPath { get; private set; }
+            /// <summary>
+            /// File format used to dump textures.
+            /// </summary>
+            public ReactiveObject<TextureFileFormat> TexturesDumpFileFormat { get; private set; }
+            /// <summary>
+            /// Enables texture dumping.
+            /// </summary>
+            public ReactiveObject<bool> EnableTextureDump { get; private set; }
+            /// <summary>
+            /// Enables real-time texture editing.
+            /// </summary>
+            public ReactiveObject<bool> EnableTextureRealTimeEdit { get; private set; }
+
+            /// <summary>
             /// Toggles the present interval mode. Options are Switch (60Hz), Unbounded (previously Vsync off), and Custom, if enabled.
             /// </summary>
             public ReactiveObject<VSyncMode> VSyncMode { get; private set; }
@@ -590,6 +607,13 @@ namespace Ryujinx.Ava.Utilities.Configuration
                 AspectRatio = new ReactiveObject<AspectRatio>();
                 AspectRatio.LogChangesToValue(nameof(AspectRatio));
                 ShadersDumpPath = new ReactiveObject<string>();
+                TexturesDumpPath = new ReactiveObject<string>();
+                TexturesDumpFileFormat = new ReactiveObject<TextureFileFormat>();
+                TexturesDumpFileFormat.LogChangesToValue(nameof(TexturesDumpFileFormat));
+                EnableTextureDump = new ReactiveObject<bool>();
+                EnableTextureDump.LogChangesToValue(nameof(EnableTextureDump));
+                EnableTextureRealTimeEdit = new ReactiveObject<bool>();
+                EnableTextureRealTimeEdit.LogChangesToValue(nameof(EnableTextureRealTimeEdit));
                 VSyncMode = new ReactiveObject<VSyncMode>();
                 VSyncMode.LogChangesToValue(nameof(VSyncMode));
                 EnableCustomVSyncInterval = new ReactiveObject<bool>();

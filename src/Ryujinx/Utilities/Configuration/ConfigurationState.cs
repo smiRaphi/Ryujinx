@@ -38,6 +38,10 @@ namespace Ryujinx.Ava.Utilities.Configuration
                 ScalingFilter = Graphics.ScalingFilter,
                 ScalingFilterLevel = Graphics.ScalingFilterLevel,
                 GraphicsShadersDumpPath = Graphics.ShadersDumpPath,
+                GraphicsTexturesDumpPath = Graphics.TexturesDumpPath,
+                GraphicsTexturesDumpFileFormat = Graphics.TexturesDumpFileFormat,
+                GraphicsEnableTextureDump = Graphics.EnableTextureDump,
+                GraphicsEnableTextureRealTimeEdit = Graphics.EnableTextureRealTimeEdit,
                 LoggingEnableDebug = Logger.EnableDebug,
                 LoggingEnableStub = Logger.EnableStub,
                 LoggingEnableInfo = Logger.EnableInfo,
@@ -160,6 +164,10 @@ namespace Ryujinx.Ava.Utilities.Configuration
             Graphics.GraphicsBackend.Value = DefaultGraphicsBackend();
             Graphics.PreferredGpu.Value = string.Empty;
             Graphics.ShadersDumpPath.Value = string.Empty;
+            Graphics.TexturesDumpPath.Value = string.Empty;
+            Graphics.TexturesDumpFileFormat.Value = TextureFileFormat.Dds;
+            Graphics.EnableTextureDump.Value = false;
+            Graphics.EnableTextureRealTimeEdit.Value = false;
             Logger.EnableDebug.Value = false;
             Logger.EnableStub.Value = true;
             Logger.EnableInfo.Value = true;

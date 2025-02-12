@@ -69,6 +69,10 @@ namespace Ryujinx.Ava.Utilities.Configuration
             Graphics.MaxAnisotropy.Value = cff.MaxAnisotropy;
             Graphics.AspectRatio.Value = cff.AspectRatio;
             Graphics.ShadersDumpPath.Value = cff.GraphicsShadersDumpPath;
+            Graphics.TexturesDumpPath.Value = cff.GraphicsTexturesDumpPath;
+            Graphics.TexturesDumpFileFormat.Value = cff.GraphicsTexturesDumpFileFormat;
+            Graphics.EnableTextureDump.Value = cff.GraphicsEnableTextureDump;
+            Graphics.EnableTextureRealTimeEdit.Value = cff.GraphicsEnableTextureRealTimeEdit;
             Graphics.BackendThreading.Value = cff.BackendThreading;
             Graphics.GraphicsBackend.Value = cff.GraphicsBackend;
             Graphics.PreferredGpu.Value = cff.PreferredGpu;
@@ -406,6 +410,10 @@ namespace Ryujinx.Ava.Utilities.Configuration
                     };
 
                     cff.CustomVSyncInterval = 120;
+                    cff.GraphicsTexturesDumpPath = string.Empty;
+                    cff.GraphicsTexturesDumpFileFormat = TextureFileFormat.Dds;
+                    cff.GraphicsEnableTextureDump = false;
+                    cff.GraphicsEnableTextureRealTimeEdit = false;
                 }),
                 // 58 migration accidentally got skipped, but it worked with no issues somehow lol
                 (59, static cff =>

@@ -71,6 +71,22 @@ namespace Ryujinx.Ava.Utilities.Configuration
         /// Dumps shaders in this local directory
         /// </summary>
         public string GraphicsShadersDumpPath { get; set; }
+        /// <summary>
+        /// Directory to save the game textures, if texture dumping is enabled.
+        /// </summary>
+        public string GraphicsTexturesDumpPath { get; set; }
+        /// <summary>
+        /// File format used to dump textures.
+        /// </summary>
+        public TextureFileFormat GraphicsTexturesDumpFileFormat { get; set; }
+        /// <summary>
+        /// Enables texture dumping.
+        /// </summary>
+        public bool GraphicsEnableTextureDump { get; set; }
+        /// <summary>
+        /// Enables real-time texture editing.
+        /// </summary>
+        public bool GraphicsEnableTextureRealTimeEdit { get; set; }
 
         /// <summary>
         /// Enables printing debug log messages
