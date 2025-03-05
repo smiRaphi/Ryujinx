@@ -22,6 +22,7 @@ using Ryujinx.Ava.Systems.AppLibrary;
 using Ryujinx.Ava.Systems.Configuration;
 using Ryujinx.Ava.Systems.Configuration.UI;
 using Ryujinx.Common;
+using Ryujinx.Common.Configuration;
 using Ryujinx.Common.Helper;
 using Ryujinx.Common.Logging;
 using Ryujinx.Common.UI;
@@ -570,6 +571,10 @@ namespace Ryujinx.Ava.UI.Windows
             GraphicsConfig.EnableShaderCache          = ConfigurationState.Instance.Graphics.EnableShaderCache;
             GraphicsConfig.EnableTextureRecompression = ConfigurationState.Instance.Graphics.EnableTextureRecompression;
             GraphicsConfig.EnableMacroHLE             = ConfigurationState.Instance.Graphics.EnableMacroHLE;
+            GraphicsConfig.TextureDumpPath            = ConfigurationState.Instance.Graphics.TexturesDumpPath;
+            GraphicsConfig.TextureDumpFormatPng       = ConfigurationState.Instance.Graphics.TexturesDumpFileFormat == TextureFileFormat.Png;
+            GraphicsConfig.EnableTextureDump          = ConfigurationState.Instance.Graphics.EnableTextureDump;
+            GraphicsConfig.EnableTextureRealTimeEdit  = ConfigurationState.Instance.Graphics.EnableTextureRealTimeEdit;
 #pragma warning restore IDE0055
         }
 
