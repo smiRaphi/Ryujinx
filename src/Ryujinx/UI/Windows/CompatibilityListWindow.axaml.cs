@@ -21,17 +21,14 @@ namespace Ryujinx.Ava.UI.Windows
                 SearchBoxNormal = { Text = titleId ?? string.Empty }
             });
 
-        public CompatibilityListWindow() : base(useCustomTitleBar: true)
+        public CompatibilityListWindow() : base(useCustomTitleBar: true, 37)
         {
             Title = RyujinxApp.FormatTitle(LocaleKeys.CompatibilityListTitle);
             
-            TitleBar.Height = 37;
-            
             InitializeComponent();
-
-            RyuLogo.Source = MainWindowViewModel.IconBitmap;
-            FlushControls.IsVisible = !ConfigurationState.Instance.ShowTitleBar;
-            NormalControls.IsVisible = ConfigurationState.Instance.ShowTitleBar;
+            
+            FlushControls.IsVisible = !ConfigurationState.Instance.ShowOldUI;
+            NormalControls.IsVisible = ConfigurationState.Instance.ShowOldUI;
         }
 
         // ReSharper disable once UnusedMember.Local
